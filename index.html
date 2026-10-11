@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>im sorry kishaaaa</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe6f0;--bg2:#ffc4da;--ink:#6e1840;--soft:#b04876;--accent:#ff4f8b;--paper:#fff9fc;--line:#ffb3cf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3a1228;--bg2:#2a0d1e;--ink:#ffe3ee;--soft:#ff9fc2;--accent:#ff6fa0;--paper:#4b1b36;--line:#7a2c55}}
+:root[data-theme="dark"]{--bg1:#3a1228;--bg2:#2a0d1e;--ink:#ffe3ee;--soft:#ff9fc2;--accent:#ff6fa0;--paper:#4b1b36;--line:#7a2c55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;background:linear-gradient(170deg,var(--bg1),var(--bg2)) fixed;background-color:var(--bg1);color:var(--ink);font-family:Fredoka,system-ui,sans-serif;text-align:center;overflow-x:hidden}
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.sky span{position:absolute;top:-12vh;color:var(--accent);animation:fall linear infinite;opacity:.85}
+.petal{background:#ff9fc2;border-radius:80% 0 80% 0}
+.sky.up span{top:auto;bottom:-12vh;animation-name:rise;opacity:.45}
+@keyframes fall{to{transform:translateY(120vh) rotate(360deg)}}
+@keyframes rise{to{transform:translateY(-120vh) rotate(40deg)}}
+main{position:relative;z-index:1;max-width:36rem;margin:0 auto;padding:9vh 1.25rem 8rem}
+h1{font-family:Pacifico,cursive;font-weight:400;font-size:clamp(2.6rem,12vw,4.6rem);line-height:1.15;margin:0 0 1rem;color:var(--accent);text-shadow:0 3px 0 rgba(255,255,255,.55)}
+.sub{font-size:1.15rem;color:var(--soft);margin:0 0 2.2rem}
+.ask{font-size:1.7rem;font-weight:600;margin:0 0 1.4rem}
+.btns{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-weight:600;cursor:pointer;border:0;border-radius:999px;transition:transform .15s}
+button:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+#yes{background:var(--accent);color:#fff;font-size:1.4rem;padding:.9rem 2.4rem;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+#yes:hover{transform:scale(1.06)}
+#yes.float{position:fixed;left:50%;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:20;animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 14px rgba(255,79,139,.25)}}
+#no{background:var(--paper);color:var(--soft);border:3px solid var(--line);font-size:1.1rem;padding:.8rem 1.8rem;max-width:100%;overflow-wrap:anywhere;line-height:1.15}
+#reveal{display:none}
+#reveal.on{display:block}
+.bouquet{width:min(22rem,86vw);height:auto;margin:0 auto .5rem;display:block;filter:drop-shadow(0 12px 14px rgba(110,24,64,.25))}
+.flower{transform-box:fill-box;transform-origin:center;animation:bloom 1.1s cubic-bezier(.2,1.5,.4,1) both;animation-delay:var(--d)}
+.stem{animation:fadein .8s both}
+@keyframes bloom{from{transform:scale(0) rotate(-40deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.letter{background:var(--paper);border:3px dashed var(--line);border-radius:26px;padding:2rem 1.5rem 1.8rem;margin-top:1rem;box-shadow:0 10px 0 rgba(255,79,139,.12);animation:fadein 1.2s 1.6s both;transform:rotate(-1deg)}
+.letter .to{font-family:Pacifico,cursive;color:var(--accent);font-size:1.4rem;margin:0 0 .8rem}
+.letter p.msg{font-family:Caveat,cursive;font-weight:700;font-size:clamp(1.7rem,6vw,2.2rem);line-height:1.35;margin:0;text-wrap:balance}
+@media (prefers-reduced-motion:reduce){.sky,#yes.float,.flower,.stem,.letter{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="sky" id="sky" aria-hidden="true"></div>
+<main>
+  <section id="ask">
+    <h1>im sorry kishaaaa</h1>
+    <p class="sub">i made you a whole website just to say it</p>
+    <p class="ask" id="q">will you forgive me?</p>
+    <div class="btns">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </section>
+
+  <section id="reveal">
+    <svg class="bouquet" id="bq" viewBox="0 0 320 360" role="img" aria-label="A bouquet of pink peonies"></svg>
+    <div class="letter">
+      <p class="to">for kisha</p>
+      <p class="msg">yeyyy im so sorry for what i did i can do better than this and ill make sure na hindi na mauulit to krungski me is sorry bati na usss:(</p>
+    </div>
+  </section>
+</main>
+<script>
+var NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+
+/* drifting shapes: hearts rise on the question page, petals fall after yes */
+function sky(list,count,up){
+  var s=document.getElementById('sky');s.innerHTML='';s.className=up?'sky up':'sky';
+  for(var i=0;i<count;i++){
+    var p=document.createElement('span'),t=list[i%list.length];
+    if(t==='p'){p.className='petal';var w=9+Math.random()*10;p.style.width=w+'px';p.style.height=(w*1.4)+'px'}
+    else{p.textContent='\u2665\uFE0E';p.style.fontSize=(14+Math.random()*22)+'px'}
+    p.style.left=Math.random()*100+'vw';
+    p.style.animationDuration=(7+Math.random()*9)+'s';
+    p.style.animationDelay=(-Math.random()*14)+'s';
+    s.appendChild(p);
+  }
+}
+sky(['h','h','h'],16,true);
+
+/* peony: layered petal rings, outer pale to inner deep */
+function peony(parent,cx,cy,r,delay){
+  var outer=el('g',{transform:'translate('+cx+' '+cy+')'},parent);
+  var g=el('g',{'class':'flower',style:'--d:'+delay+'s'},outer);
+  var rings=[[9,.62,.34,.5,'#ffc9dc'],[8,.46,.33,.46,'#ffa3c4'],[7,.3,.29,.4,'#ff7eab'],[6,.16,.23,.3,'#f2578f'],[5,.07,.15,.2,'#d93a74']];
+  rings.forEach(function(rg,k){
+    for(var i=0;i<rg[0];i++){
+      var a=i*360/rg[0]+k*17;
+      el('ellipse',{cx:0,cy:-rg[1]*r,rx:rg[2]*r,ry:rg[3]*r,fill:rg[4],stroke:'#d93a74','stroke-opacity':.3,'stroke-width':1,transform:'rotate('+a+')'},g);
+    }
+  });
+  el('circle',{cx:0,cy:0,r:r*.07,fill:'#ffd770'},g);
+}
+
+function bouquet(){
+  var s=document.getElementById('bq');s.innerHTML='';
+  var flowers=[[160,92,64,.2],[88,138,54,.5],[232,138,54,.8],[120,190,44,1.1],[200,190,44,1.3]];
+  [[48,175,-45],[272,175,45],[70,100,-70],[250,100,70],[160,40,0]].forEach(function(l,i){
+    var o=el('g',{transform:'translate('+l[0]+' '+l[1]+') rotate('+l[2]+')'},s);
+    el('ellipse',{cx:0,cy:0,rx:15,ry:38,fill:i%2?'#5fae6b':'#4f9a5e','class':'stem',style:'animation-delay:.1s'},o);
+  });
+  flowers.forEach(function(f){el('line',{x1:f[0],y1:f[1],x2:160,y2:325,stroke:'#4f9a5e','stroke-width':6,'stroke-linecap':'round','class':'stem'},s)});
+  el('path',{d:'M66 205 Q160 188 254 205 L184 342 Q160 350 136 342 Z',fill:'#fff3f8',stroke:'#ffb3cf','stroke-width':3,'class':'stem'},s);
+  el('path',{d:'M110 215 L150 340 M160 210 L160 346 M210 215 L170 340',stroke:'#ffd0e1','stroke-width':3,fill:'none','class':'stem'},s);
+  flowers.forEach(function(f){peony(s,f[0],f[1],f[2],f[3])});
+  var b=el('g',{'class':'flower',style:'--d:1.5s'},el('g',{transform:'translate(160 300)'},s));
+  el('ellipse',{cx:-24,cy:0,rx:26,ry:14,fill:'#ff4f8b',transform:'rotate(-18 -24 0)'},b);
+  el('ellipse',{cx:24,cy:0,rx:26,ry:14,fill:'#ff4f8b',transform:'rotate(18 24 0)'},b);
+  el('circle',{cx:0,cy:0,r:9,fill:'#e12f74'},b);
+}
+
+/* the No button keeps growing until Yes is the only way out */
+var n=0,no=document.getElementById('no'),yes=document.getElementById('yes');
+var caps=['No','are you sure?','pleaseee','kishaaaa','ayaw mo??','bati na tayo pls','last chance','sorry na po talaga','sige na pooo','click yes na'];
+var qs=['will you forgive me?','pretty pleaseee?','i promise i learned my lesson','kishaaaa'];
+no.addEventListener('click',function(){
+  n++;
+  no.textContent=caps[Math.min(n,caps.length-1)];
+  no.style.fontSize=Math.min(1.1+n*1.3,15)+'rem';
+  no.style.padding=Math.min(.8+n*.5,5)+'rem '+Math.min(1.8+n*.7,6)+'rem';
+  document.getElementById('q').textContent=qs[Math.min(Math.floor(n/3),qs.length-1)];
+  if(n>=2)yes.classList.add('float');
+});
+
+yes.addEventListener('click',function(){
+  document.getElementById('ask').style.display='none';
+  document.getElementById('reveal').classList.add('on');
+  window.scrollTo(0,0);
+  bouquet();
+  sky(['p','p','h','p'],28,false);
+});
+</script>
+</body>
+</html>
